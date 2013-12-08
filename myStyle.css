@@ -20,3 +20,13 @@ h3 {
 	margin: auto;
 	background-color: white;
 }
+.navbar {
+	border-width: 3px;
+	border-style: ridge;
+	border-color: grey;
+}
+#login {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
