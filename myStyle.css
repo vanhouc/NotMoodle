@@ -5,8 +5,16 @@ body {
 	border-width: 5px;
 	border-style: solid;
 	border-color: black;
+	margin: auto;
+}
+h1 {
+	margin: auto;
+}
+h3 {
+	margin: auto;
 }
 .wrapper {
 	width: 960px;
 	margin: auto;
+	background-color: white;
 }
