@@ -10,10 +10,12 @@ body {
 h1 {
 	margin: auto;
 	text-align: center;
+	font-family: 'Segoe UI';
 }
 h3 {
 	margin: auto;
 	text-align: center;
+	font-family: 'Segoe UI';
 }
 .wrapper {
 	width: 960px;
@@ -29,4 +31,8 @@ h3 {
 	border-width: 1px;
 	border-style: solid;
 	border-color: black;
+	margin: 2px;
+	width: 135px;
+	text-align: center;
+	font-family: 'Calibri';
 }
