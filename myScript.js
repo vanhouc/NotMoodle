@@ -10,5 +10,5 @@ $(document).ready(function() {
 	});
 });
 function checkLogin() {
-		$.post("login.php",)
+	
 };
