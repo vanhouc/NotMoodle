@@ -3,7 +3,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="myStyle.css"></link>
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
-		<script src="myScript.js"></script>
+		<script type="text/javascript" src="myScript.js"></script>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -14,10 +14,13 @@
 			<div class="navbar">
 				<div id="login">Click here to Login</div>
 				<form id="loginForm" name="loginForm">
-					Username: <input type = "text" name ="username"><br />
-					Password: <input type = "password" name ="password"><br />
-					<input type = "submit" value ="Submit">
+					Username: <input id ="loginName" type = "text" name ="username"><br />
+					Password: <input id ="loginPass" type = "password" name ="password"><br />
+					<input id="loginSubmit" type = "button" value ="Submit" onClick="validateLogin()">
 				</form>
+			</div>
+			<div id="mainSection">
+				
 			</div>
 		</div>
 	</body>
