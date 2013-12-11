@@ -13,9 +13,12 @@ function checkLogin(username, password) {
 				return true;
 			}
 		}
-		console.log("So close yet so far " + result + result[x]);
+		console.log("So close yet so far " + result.toString() + result[x].value);
 		return false;
 	});
+}
+function pullUserData(username) {
+
 }
 $(document).ready(function() {
 	$('#login').mouseenter(function() {
