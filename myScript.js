@@ -1,6 +1,7 @@
 var CurrentUser;
 function validateLogin() {
-	if (checkLogin(document.getElementById("loginName").value, document.getElementById("loginPass").value, true) === true) {
+	checkLogin(document.getElementById("loginName").value, document.getElementById("loginPass").value, true);
+	if (CurrentUser != null) {
 		$("#loginForm").slideUp("slow", function() {
 			$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
 		});
@@ -18,11 +19,9 @@ function checkLogin(username, password, setCurrUser) {
 				if (setCurrUser === true) {
 					CurrentUser = result[x];
 				}
-				return true;
 			}
 		}
-		console.log("So close yet so far ");
-		return false;
+		console.log("So close yet so far");
 	});
 }
 function pullUserData(username) {
