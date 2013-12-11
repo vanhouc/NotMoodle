@@ -4,6 +4,7 @@ function validateLogin() {
 		$("#loginForm").slideUp("slow", function() {
 			$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
 		});
+		return true;
 	}
 	else {
 		return false;
@@ -11,7 +12,7 @@ function validateLogin() {
 }
 function checkLogin(username, password, setCurrUser) {
 	$.getJSON("Users.js", function(result) {
-		for (x in result) {
+		for (var x in result) {
 			if (x === username && result[x].password === password) {
 				//This function sets the global CurrentUser to the selected person and probably should be its own function
 				if (setCurrUser === true) {
