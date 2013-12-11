@@ -1,6 +1,5 @@
 {
-	"Cameron": {
-		"user": "vanhouc",
+	"vanhouc": {
 		"password": "test123",
 		"courses": [
 		{
