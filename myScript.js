@@ -1,6 +1,6 @@
 var CurrentUser;
 function validateLogin() {
-	if (checkLogin(document.getElementById("loginName").value, document.getElementById("loginPass").value, true)) {
+	if (checkLogin(document.getElementById("loginName").value, document.getElementById("loginPass").value, true) === true) {
 		$("#loginForm").slideUp("slow", function() {
 			$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
 		});
