@@ -18,7 +18,7 @@ h3 {
 	font-family: 'Segoe UI';
 }
 .wrapper {
-	width: 960px;
+	width: 950px;
 	margin: auto;
 	background-color: white;
 }
@@ -35,4 +35,7 @@ h3 {
 	width: 135px;
 	text-align: center;
 	font-family: 'Calibri';
+}
+#loginForm {
+	margin: 2px;
 }

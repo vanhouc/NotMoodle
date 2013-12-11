@@ -5,8 +5,10 @@ $(document).ready(function() {
 	$('#login').mouseleave(function() {
 		$(this).css('font-weight', 'normal');
 	});
+	$('#loginForm').hide();
 	$('#login').click(function() {
-		$(this).hide().after(
+		$(this).hide();
+		$('#loginForm').show();
 	});
 });
 function checkLogin() {
