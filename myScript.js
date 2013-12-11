@@ -22,7 +22,7 @@ function checkLogin(username, password) {
 	// 		return false;
 	// 	}
 	// 	});
-	$.getJSON("Users.json", function(result) {
+	$.getJSON("Users.js", function(result) {
 		console.log(result);
 	});
 }
