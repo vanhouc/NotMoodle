@@ -8,7 +8,6 @@ function validateLogin() {
 }
 function checkLogin(username, password) {
 	$.getJSON("Users.js", function(result) {
-		var obj = $.parseJSON(result);
 		for (x in result) {
 			if (x === username && result[x].password === password) {
 				return true;
