@@ -1,19 +1,26 @@
+var CurrentUser;
 function validateLogin() {
-	if (checkLogin(document.getElementById("loginName").value, document.getElementById("loginPass").value)) {
-		return true;
+	if (checkLogin(document.getElementById("loginName").value, document.getElementById("loginPass").value, true)) {
+		$("#loginForm").slideUp("slow", function() {
+			$("#login").html("Hello " + CurrentUser.fName);
+		});
 	}
 	else {
 		return false;
 	}
 }
-function checkLogin(username, password) {
+function checkLogin(username, password, setCurrUser) {
 	$.getJSON("Users.js", function(result) {
 		for (x in result) {
 			if (x === username && result[x].password === password) {
+				//This function sets the global CurrentUser to the selected person and probably should be its own function
+				if (setCurrUser === true) {
+					CurrentUser = result[x];
+				}
 				return true;
 			}
 		}
-		console.log("So close yet so far " + result.toString() + result[x].value);
+		console.log("So close yet so far ");
 		return false;
 	});
 }
