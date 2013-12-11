@@ -7,23 +7,15 @@ function validateLogin() {
 	}
 }
 function checkLogin(username, password) {
-	// var req = new XMLHttpRequest();
-	// req.open("POST", "")
-	// $.ajax({
-	// 	url: "Users.json",
-	// 	type: 'get',
-	// 	datatype: 'jsonp',
-	// 	success: function(result) {
-	// 		console.log("SUCCESS!!!"+"\n"+result);
-	// 		return true;
-	// 	},
-	// 	error: function(result) {
-	// 		console.log("Failure!");
-	// 		return false;
-	// 	}
-	// 	});
 	$.getJSON("Users.js", function(result) {
-		console.log(result);
+		var obj = $.parseJSON(result);
+		for (x in result) {
+			if (x === username && result[x].password === password) {
+				return true;
+			}
+		}
+		console.log("So close yet so far " + result + result[x]);
+		return false;
 	});
 }
 $(document).ready(function() {
