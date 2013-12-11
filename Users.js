@@ -1,13 +1,10 @@
 {
 	"vanhouc": {
 		"password": "test123",
+		"fName": "Cameron",
 		"courses": [
-		{
-			"title": "CIT190"
-		},
-		{
-			"title": "CIT255"
-		}
+			"CIT190",
+			"CIT255"
 		]
 	}
 }
