@@ -18,6 +18,9 @@ stateManager.prototype.checkLogin = function (username, password) {
 			return true;
 		}
 		console.log("User failed to log on");
+		if (CurrentUser !== null) {
+			console.log("DAFUQ?!?!?!")
+		}
 		return false;
 	}
 	console.log("This shouldn't be called while there is a CurrentUser");
