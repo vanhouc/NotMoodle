@@ -44,3 +44,7 @@ h3 {
 #wrongLogin {
 	color: red;
 }
+.contentPosts {
+	background-color: tan;
+	width: 650px;
+}

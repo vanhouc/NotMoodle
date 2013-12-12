@@ -8,7 +8,7 @@ function SetupUserEnv(result) {
 			for (x = 0; x < classList.courses.length; x += 1) {
 				if (CurrentUser.courses[i] === classList.courses[x].title) {
 					for (a = 0; a < classList.courses[x].assignments.length; a += 1) {
-						assList += "<div id=" + classList.courses[x].assignments[a].title + ">" +
+						assList += "<div class=\"contentPosts\" id=" + classList.courses[x].assignments[a].title + ">" +
 							"<p id=\"contentClass\">Class: " + classList.courses[x].title + "</p>" +
 							"<p id=\"contentTitle\">Title: " + classList.courses[x].assignments[a].title + "</p>" +
 							"<p id=\"contentDate\">Due On: " + classList.courses[x].assignments[a].due + /*"	Remaining Time: " + ((today.getTime() - Date.getTime(classList.courses[x].assignments[a].due)) / (24*60*60*1000)).toString() +*/ "</p>" +
