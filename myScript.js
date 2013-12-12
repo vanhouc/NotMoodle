@@ -56,6 +56,8 @@ $(document).ready(function() {
 		}
 	});
 	$('#loginSubmit').click(function() {
-		$.getJSON("Users.js", loginResponse(result));
+		$.getJSON("Users.js", function(result) {
+			loginResponse(result);
+		});
 	});
 });
