@@ -1,4 +1,4 @@
-var currStateManager, CurrentUser = null;
+var currStateManager = new stateManager(), CurrentUser = null;
 function stateManager() {'use strict';}
 // stateManager.prototype.CurrentUser = null;
 stateManager.prototype.checkLogin = function (username, password) {
@@ -26,7 +26,6 @@ stateManager.prototype.checkLogin = function (username, password) {
 
 $(document).ready(function() {
 	'use strict';
-	currStateManager = new stateManager();
 	$('#login').mouseenter(function() {
 		$(this).css('font-weight', 'bold');
 	});
