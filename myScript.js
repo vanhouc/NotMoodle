@@ -14,7 +14,7 @@ stateManager.prototype.checkLogin = function (username, password) {
 			}
 			console.log("User not found or incorrect credentials");
 		});
-		if this.CurrentUser !== 0) {
+		if (this.CurrentUser !== 0) {
 			return true;
 		}
 		return false;
