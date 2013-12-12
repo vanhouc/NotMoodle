@@ -13,12 +13,12 @@ stateManager.prototype.checkLogin = function (username, password) {
 				}
 			}
 		});
-		if (CurrentUser !== null) {
+		if (CurrentUser != null) {
 			console.log("User successfully logged on as " + CurrentUser.fName);
 			return true;
 		}
 		console.log("User failed to log on");
-		if (CurrentUser !== null) {
+		if (CurrentUser != null) {
 			console.log("DAFUQ?!?!?!")
 		}
 		return false;
