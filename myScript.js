@@ -2,10 +2,10 @@ var CurrentUser = null;
 function loginResponse(result) {
 	'use strict';
 	var x, loginName = document.getElementById("loginName").value, passName = document.getElementById("loginPass").value;
-		for (x = 0; x < result.length; x += 1) {
-			if (result[x] === loginName && result[x].password === passName) {
+		for (x = 0; x < result.users.length; x += 1) {
+			if (result.users[x].username === loginName && result.users[x].password === passName) {
 				//This function sets the global CurrentUser to the selected person and probably should be its own function
-				CurrentUser = result[x];
+				CurrentUser = result.users[x];
 				console.log(CurrentUser);
 			}
 		}
