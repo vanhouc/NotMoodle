@@ -50,7 +50,7 @@ $(document).ready(function() {
 			document.getElementById("loginName").value, 
 			document.getElementById("loginPass").value)) {
 			$("#loginForm").slideUp("slow", function() {
-				$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
+				$("#login").html("Hello " + currStateManager.CurrentUser.fName).fadeIn("slow");
 			});
 			$.getJSON("Classes.js", function(results) {
 				var i, x, a, assList, today = new Date(), classList = results;
