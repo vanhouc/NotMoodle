@@ -1,13 +1,11 @@
 function StateManager() {
 	'use strict';
 	this.CurrentUser = null;
-	this.askLogin = function (callback) {
-			$.getJSON("Users.js", callback);
-		};
-	this.askLogin (function(result) {
-	var x, loginName = document.getElementById("loginName").value;
+}
+function loginResponse(result) {
+	var x, loginName = document.getElementById("loginName").value, passName = document.getElementById("loginPass").value;
 		for (x in result) {
-			if (x === loginName && result[x].password === document.getElementById("loginPass").value && result.hasOwnProperty(x)) {
+			if (x === loginName && result[x].password === passName && result.hasOwnProperty(x)) {
 				//This function sets the global CurrentUser to the selected person and probably should be its own function
 				this.CurrentUser = result[x];
 			}
@@ -15,7 +13,6 @@ function StateManager() {
 		this.CurrentUser = this.CurrentUser;
 		console.log(this.CurrentUser);
 	});
-}
 // stateManager.prototype.CurrentUser = null;
 // stateManager.prototype.checkLogin = function (username, password) {
 // 	'use strict';
@@ -89,6 +86,6 @@ $(document).ready(function() {
 		}
 	});
 	$('#loginSubmit').click(function() {
-		(currStateManager.askLogin(document.getElementById("loginName").value, document.getElementById("loginPass").value));
+		$.getJSON("Users.js", loginResponse(result));
 	});
 });
