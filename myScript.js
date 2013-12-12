@@ -1,21 +1,20 @@
 function StateManager() {
 	'use strict';
 	this.CurrentUser = null;
-	this.loginValidated = function(userToAssign) {
+	this.checkLogin = function(userToAssign) {
+		var x, loginName = document.getElementById("loginName").value;
+		for (x in userToAssign) {
+			if (x === loginName && userToAssign[x].password === document.getElementById("loginPass").value && userToAssign.hasOwnProperty(x)) {
+				//This function sets the global CurrentUser to the selected person and probably should be its own function
+				this.CurrentUser = userToAssign[x];
+			}
+		}
 		this.CurrentUser = userToAssign;
 		SetupUserEnv();
 	};
-	this.checkLogin = function (username, password) {
+	this.askLogin = function (username, password) {
 		if (this.CurrentUser === null) {
-			$.getJSON("Users.js", function (result) {
-				var x;
-				for (x in result) {
-					if (x === username && result[x].password === password && result.hasOwnProperty(x)) {
-						//This function sets the global CurrentUser to the selected person and probably should be its own function
-						loginValidated(result[x]);
-					}
-				}
-			});
+			$.getJSON("Users.js", checkLogin(result));
 		}
 	};
 }
@@ -92,6 +91,6 @@ $(document).ready(function() {
 		}
 	});
 	$('#loginSubmit').click(function() {
-		(currStateManager.checkLogin(document.getElementById("loginName").value, document.getElementById("loginPass").value));
+		(currStateManager.askLogin(document.getElementById("loginName").value, document.getElementById("loginPass").value));
 	});
 });
