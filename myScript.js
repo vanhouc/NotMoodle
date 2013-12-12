@@ -1,7 +1,7 @@
 var CurrentUser = null;
-function SetupUserEnv(results) {
+function SetupUserEnv(result) {
 	'use strict';
-	var i, x, a, assList, today = new Date(), classList = results;
+	var i, x, a, assList, today = new Date(), classList = result;
 	$("#loginForm").slideUp("slow", function() {
 		$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
 		for (i = 0; i < CurrentUser.courses.length; i += 1) {
@@ -21,7 +21,7 @@ function SetupUserEnv(results) {
 	});
 }
 function fetchContent() {
-	$.getJSON("Classes.js", function(results) {
+	$.getJSON("Classes.js", function(result) {
 		SetupUserEnv(result);
 	});
 }
