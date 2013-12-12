@@ -1,54 +1,25 @@
-function StateManager() {
-	'use strict';
-	this.CurrentUser = null;
-}
+var CurrentUser;
 function loginResponse(result) {
+	'use strict';
 	var x, loginName = document.getElementById("loginName").value, passName = document.getElementById("loginPass").value;
-		for (x in result) {
-			if (x === loginName && result[x].password === passName && result.hasOwnProperty(x)) {
+		for (x = 0; x < result.length; x += 1) {
+			if (result[x] === loginName && result[x].password === passName) {
 				//This function sets the global CurrentUser to the selected person and probably should be its own function
-				this.CurrentUser = result[x];
+				CurrentUser = result[x];
+				console.log(CurrentUser);
 			}
 		}
-		this.CurrentUser = this.CurrentUser;
-		console.log(this.CurrentUser);
-	});
-// stateManager.prototype.CurrentUser = null;
-// stateManager.prototype.checkLogin = function (username, password) {
-// 	'use strict';
-// 	if (this.CurrentUser === null) {
-// 		$.getJSON("Users.js", function(result) {
-// 			var x;
-// 			for (x in result) {
-// 				if (x === username && result[x].password === password && result.hasOwnProperty(x)) {
-// 					//This function sets the global CurrentUser to the selected person and probably should be its own function
-// 					this.CurrentUser = result[x];
-// 				}
-// 			}
-// 		});
-// 	}
-// 		if this.CurrentUser !== null) {
-// 			console.log("User successfully logged on as " + this.CurrentUser.fName);
-// 			return true;
-// 		}
-// 		console.log("User failed to log on");
-// 		// if (CurrentUser !== null) {
-// 		// 	console.log("DAFUQ?!?!?!");
-// 		// 	return true;
-// 		// }
-// 	console.log("This shouldn't be called while there is a CurrentUser");
-// 	return false;
-// };
-function SetupUserEnv(currStateManager) {
+	}
+function SetupUserEnv() {
 	'use strict';
 	$("#loginForm").slideUp("slow", function() {
-		$("#login").html("Hello " + currStateManager.CurrentUser.fName).fadeIn("slow");
+		$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
 		$.getJSON("Classes.js", function(results) {
 		var i, x, a, assList, today = new Date(), classList = results;
-		for (i = 0; i < currStateManager.getClasses().length; i+=1) {
-			for (x = 0; x < classList.length; x+=1) {
-				if (currStateManager.getClasses()[i] === classList[x].title) {
-					for (a = 0; a < classList[x].assignments.length; a+=1) {
+		for (i = 0; i < CurrentUser.courses.length; i += 1) {
+			for (x = 0; x < classList.length; x += 1) {
+				if (CurrentUser.courses[i] === classList[x].title) {
+					for (a = 0; a < classList[x].assignments.length; a += 1) {
 						assList = "<div id=" + classList[x].assignments[a].title + ">" +
 							"<p id=\"contentClass\">Class: " + classList[x].title + "</p>" +
 							"<p id=\"contentTitle\">Title: " + classList[x].assignments[a].title + "</p>" +
@@ -64,7 +35,6 @@ function SetupUserEnv(currStateManager) {
 }
 $(document).ready(function() {
 	'use strict';
-	var currStateManager = new StateManager();
 	$('#login').mouseenter(function() {
 		$(this).css('font-weight', 'bold');
 	});
@@ -73,14 +43,14 @@ $(document).ready(function() {
 	});
 	$('#loginForm').hide();
 	$('#login').click(function() {
-		if (currStateManager.CurrentUser === null) {
+		if (CurrentUser === null) {
 			$(this).hide();
 			$('#loginForm').show();
 		}
     else {
       var promptLogOut = confirm("Do you want to Log-Out?");
 			if (promptLogOut) {
-				currStateManager.CurrentUser = 0;
+				CurrentUser = null;
 				$("#mainSection").slideUp("slow").empty();
 			}
 		}
