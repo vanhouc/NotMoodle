@@ -36,10 +36,7 @@ function loginResponse(result) {
 				CurrentUser = result.users[x];
 				console.log(CurrentUser);
 				fetchContent();
-				return true;
 			}
-
-			return false;
 		}
 	}
 function loginFailed() {
