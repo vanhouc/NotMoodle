@@ -6,7 +6,7 @@
 			"assignments": [
 				{
 					"title": "Lorem ipsum",
-					"due": "12/12/2013",
+					"due": "12/16/2013",
 					"content": "Lorem ipsum dolor sit amet, vis dico utroque omittam at, pro ei adversarium neglegentur consectetuer. Singulis postulant mediocrem sit te, at meliore maiorum consequat mei, mucius deserunt vituperatoribus vim ne. Vis omnesque consulatu eu. In vis mollis labores, alia efficiendi te cum. Cu quis graeco nonumes mel, te ius laudem fuisset."
 				},
 				{
@@ -22,7 +22,7 @@
 			"assignments": [
 				{
 					"title": "Sit ei",
-					"due": "12/13/2013",
+					"due": "12/14/2013",
 					"content": "Sit ei esse solet, et euripidis vulputate nam. Te his voluptaria quaerendum vituperatoribus. Id nonumy nostro eos, iuvaret facilisi qui et, te vix mazim admodum. Melius adolescens id eam, no cum quas primis sadipscing, tation utinam doming sed no. Legere lobortis consequat cum an."
 				}
 			]
@@ -33,7 +33,7 @@
 			"assignments": [
 				{
 					"title": "Not Moodle",
-					"due": "12/11/2013",
+					"due": "12/12/2013",
 					"content": "Ius malorum vituperatoribus ei, nibh congue dicant ut cum, suas ubique per ex. Ex ius possim perpetua. Viris singulis theophrastus id pro, vim et detraxit constituam, mei ei veniam discere corrumpit. Eam diam vivendum eu, has ex iudico elaboraret. Vis laudem alienum te, ad volumus appellantur definitionem his."
 				}
 			]
