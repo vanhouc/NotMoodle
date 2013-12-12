@@ -22,7 +22,9 @@ h3 {
 	margin: auto;
 	background-color: white;
 	border-style: outset;
-	box-shadow: 5px;
+	border-width: 3px;
+	border-radius: 10px; 
+	box-shadow: 10px 10px 5px #888888;
 }
 .navbar {
 	border-width: 3px;
@@ -59,4 +61,7 @@ h3 {
 }
 #mainSection {
 	margin: auto;
+}
+.contentText {
+	margin: 2px;
 }
