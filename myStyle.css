@@ -20,7 +20,6 @@ h3 {
 .wrapper {
 	width: 950px;
 	margin: auto;
-	background-color: white;
 }
 .navbar {
 	border-width: 3px;
@@ -47,4 +46,7 @@ h3 {
 .contentPosts {
 	background-color: tan;
 	width: 650px;
+}
+#mainSection {
+	margin: auto;
 }
