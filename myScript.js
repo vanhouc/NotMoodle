@@ -1,5 +1,5 @@
 var currStateManager, CurrentUser = null;
-function stateManager() {}
+function stateManager() {'use strict';}
 // stateManager.prototype.CurrentUser = null;
 stateManager.prototype.checkLogin = function (username, password) {
 	'use strict';
@@ -60,7 +60,7 @@ $(document).ready(function() {
 					for (x = 0; x < classList.length; x+=1) {
 						if (currStateManager.getClasses()[i] === classList[x].title) {
 							for (a = 0; a < classList[x].assignments.length; a+=1) {
-								assList += "<div id=" + classList[x].assignments[a].title + ">" +
+								assList = "<div id=" + classList[x].assignments[a].title + ">" +
 									"<p id=\"contentClass\">Class: " + classList[x].title + "</p>" +
 									"<p id=\"contentTitle\">Title: " + classList[x].assignments[a].title + "</p>" +
 									"<p id=\"contentDate\">Due On: " + classList[x].assignments[a].due + "	Remaining Time: " + ((today.getTime() - Date.getTime(classList[x].assignments[a].due)) / (24*60*60*1000)).toString() + "</p>" +
