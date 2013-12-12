@@ -1,22 +1,20 @@
 function StateManager() {
 	'use strict';
 	this.CurrentUser = null;
-	this.checkLogin = function(userToAssign) {
-		var x, loginName = document.getElementById("loginName").value;
-		for (x in userToAssign) {
-			if (x === loginName && userToAssign[x].password === document.getElementById("loginPass").value && userToAssign.hasOwnProperty(x)) {
+	this.askLogin = function (callback) {
+			$.getJSON("Users.js", callback);
+		};
+	this.askLogin (function(result) {
+	var x, loginName = document.getElementById("loginName").value;
+		for (x in result) {
+			if (x === loginName && result[x].password === document.getElementById("loginPass").value && result.hasOwnProperty(x)) {
 				//This function sets the global CurrentUser to the selected person and probably should be its own function
-				this.CurrentUser = userToAssign[x];
+				this.CurrentUser = result[x];
 			}
 		}
-		this.CurrentUser = userToAssign;
-		SetupUserEnv();
-	};
-	this.askLogin = function (username, password) {
-		if (this.CurrentUser === null) {
-			$.getJSON("Users.js", checkLogin(result));
-		}
-	};
+		this.CurrentUser = this.CurrentUser;
+		console.log(this.CurrentUser);
+	});
 }
 // stateManager.prototype.CurrentUser = null;
 // stateManager.prototype.checkLogin = function (username, password) {
