@@ -1,8 +1,7 @@
-function stateManager() {
+function StateManager() {
 	'use strict';
 	this.CurrentUser = null;
 	this.checkLogin = function (username, password) {
-	'use strict';
 	if (this.CurrentUser === null) {
 		$.getJSON("Users.js", function(result) {
 			var x;
@@ -14,7 +13,7 @@ function stateManager() {
 			}
 		});
 	}
-		if this.CurrentUser !== null) {
+		if (this.CurrentUser !== null) {
 			console.log("User successfully logged on as " + this.CurrentUser.fName);
 			return true;
 		}
@@ -56,7 +55,7 @@ function stateManager() {
 
 $(document).ready(function() {
 	'use strict';
-	var currStateManager = new stateManager();
+	var currStateManager = new StateManager();
 	$('#login').mouseenter(function() {
 		$(this).css('font-weight', 'bold');
 	});
@@ -65,14 +64,14 @@ $(document).ready(function() {
 	});
 	$('#loginForm').hide();
 	$('#login').click(function() {
-		if (CurrentUser === null) {
+		if (currStateManager.CurrentUser === null) {
 			$(this).hide();
 			$('#loginForm').show();
 		}
     else {
       var promptLogOut = confirm("Do you want to Log-Out?");
 			if (promptLogOut) {
-				CurrentUser = 0;
+				currStateManager.CurrentUser = 0;
 				$("#mainSection").slideUp("slow").empty();
 			}
 		}
@@ -82,7 +81,7 @@ $(document).ready(function() {
 			document.getElementById("loginName").value, 
 			document.getElementById("loginPass").value)) {
 			$("#loginForm").slideUp("slow", function() {
-				$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
+				$("#login").html("Hello " + currStateManager.CurrentUser.fName).fadeIn("slow");
 			});
 			$.getJSON("Classes.js", function(results) {
 				var i, x, a, assList, today = new Date(), classList = results;
