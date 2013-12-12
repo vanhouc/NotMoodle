@@ -56,7 +56,7 @@ h3 {
 	color: red;
 }
 .contentPosts {
-	background-color: tan;
+	background-color: rgb(226, 228, 250);
 	width: 650px;
 	margin: auto;
 	margin-top: 5px;
@@ -67,6 +67,7 @@ h3 {
 }
 #mainSection {
 	margin: auto;
+	background-color: white;
 }
 .contentText {
 	margin: 2px;
