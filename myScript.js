@@ -1,9 +1,9 @@
 var CurrentUser = null;
 function SetupUserEnv(results) {
 	'use strict';
+	var i, x, a, assList, today = new Date(), classList = results;
 	$("#loginForm").slideUp("slow", function() {
 		$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
-		var i, x, a, assList, today = new Date(), classList = results;
 		for (i = 0; i < CurrentUser.courses.length; i += 1) {
 			for (x = 0; x < classList.courses.length; x += 1) {
 				if (CurrentUser.courses[i] === classList.courses[x].title) {
