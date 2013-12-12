@@ -21,7 +21,7 @@
 			"instructor": "Gene Sauter",
 			"assignments": [
 				{
-					"title": "Sit ei"
+					"title": "Sit ei",
 					"due": "12/13/2013",
 					"content": "Sit ei esse solet, et euripidis vulputate nam. Te his voluptaria quaerendum vituperatoribus. Id nonumy nostro eos, iuvaret facilisi qui et, te vix mazim admodum. Melius adolescens id eam, no cum quas primis sadipscing, tation utinam doming sed no. Legere lobortis consequat cum an."
 				}
