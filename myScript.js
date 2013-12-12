@@ -33,7 +33,7 @@ function loginResponse(result) {
 				//This function sets the global CurrentUser to the selected person and probably should be its own function
 				CurrentUser = result.users[x];
 				console.log(CurrentUser);
-				SetupUserEnv();
+				fetchContent();
 			}
 		}
 	}
