@@ -4,7 +4,7 @@ function StateManager() {
 	this.checkLogin = function (username, password) {
 	if (this.CurrentUser === null) {
 		var e = this;
-		$.getJSON("Users.js", function (result) {
+		$.getJSON("Users.js", function (result, e) {
 			var x;
 			for (x in result) {
 				if (x === username && result[x].password === password && result.hasOwnProperty(x)) {
