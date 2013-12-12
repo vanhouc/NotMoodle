@@ -3,18 +3,18 @@ var currStateManager = new stateManager();
 stateManager.prototype.CurrentUser = 0;
 stateManager.prototype.checkLogin = function (username, password) {
 	'use strict';
-	if (CurrentUser === 0) {
+	if (this.CurrentUser === 0) {
 		$.getJSON("Users.js", function(result) {
 			var x;
 			for (x in result) {
 				if (x === username && result[x].password === password && result.hasOwnProperty(x)) {
 					//This function sets the global CurrentUser to the selected person and probably should be its own function
-					CurrentUser = result[x];
+					this.CurrentUser = result[x];
 				}
 			}
 			console.log("User not found or incorrect credentials");
 		});
-		if (CurrentUser !== 0) {
+		if this.CurrentUser !== 0) {
 			return true;
 		}
 		return false;
