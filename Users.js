@@ -1,6 +1,7 @@
 {
 	"users": [
 		{
+			"username": "vanhouc",
 			"password": "test123",
 			"fName": "Cameron",
 			"courses": [
