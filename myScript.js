@@ -14,7 +14,7 @@ stateManager.prototype.checkLogin = function (username, password) {
 			}
 		});
 	}
-		if (!!CurrentUser) {
+		if (CurrentUser.password != null) {
 			console.log("User successfully logged on as " + CurrentUser.fName);
 			return true;
 		}
