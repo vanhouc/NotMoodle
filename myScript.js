@@ -3,7 +3,7 @@ var currStateManager = new stateManager();
 stateManager.prototype.CurrentUser = 0;
 stateManager.prototype.checkLogin = function (username, password) {
 	'use strict';
-	if (CurrentUser === null || CurrentUser === 0) {
+	if (CurrentUser === 0) {
 		$.getJSON("Users.js", function(result) {
 			var x;
 			for (x in result) {
@@ -14,7 +14,7 @@ stateManager.prototype.checkLogin = function (username, password) {
 			}
 			console.log("User not found or incorrect credentials");
 		});
-		if (CurrentUser !== null) {
+		if (CurrentUser !== 0) {
 			return true;
 		}
 		return false;
@@ -33,13 +33,14 @@ $(document).ready(function() {
 	});
 	$('#loginForm').hide();
 	$('#login').click(function() {
-		if (currStateManager.CurrentUser === null) {
+		if (currStateManager.CurrentUser === 0) {
 			$(this).hide();
 			$('#loginForm').show();
 		}
     else {
       var promptLogOut = confirm("Do you want to Log-Out?");
 			if (promptLogOut) {
+				currStateManager.CurrentUser = 0;
 				$("#mainSection").slideUp("slow").empty();
 			}
 		}
