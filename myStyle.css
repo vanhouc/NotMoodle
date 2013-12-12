@@ -1,5 +1,5 @@
 body {
-	background-color: #0D2E4C;
+	background-color: #7ACEF4;
 }
 .titleblock {
 	border-width: 5px;
@@ -20,6 +20,9 @@ h3 {
 .wrapper {
 	width: 950px;
 	margin: auto;
+	background-color: white;
+	border-style: outset;
+	box-shadow: 5px;
 }
 .navbar {
 	border-width: 3px;
