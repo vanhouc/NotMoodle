@@ -5,14 +5,14 @@ function SetupUserEnv(results) {
 		$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
 		var i, x, a, assList, today = new Date(), classList = results;
 		for (i = 0; i < CurrentUser.courses.length; i += 1) {
-			for (x = 0; x < classList.length; x += 1) {
-				if (CurrentUser.courses[i] === classList[x].title) {
-					for (a = 0; a < classList[x].assignments.length; a += 1) {
-						assList = "<div id=" + classList[x].assignments[a].title + ">" +
-							"<p id=\"contentClass\">Class: " + classList[x].title + "</p>" +
-							"<p id=\"contentTitle\">Title: " + classList[x].assignments[a].title + "</p>" +
-							"<p id=\"contentDate\">Due On: " + classList[x].assignments[a].due + "	Remaining Time: " + ((today.getTime() - Date.getTime(classList[x].assignments[a].due)) / (24*60*60*1000)).toString() + "</p>" +
-							"<p id=\"contentBody\">" + classList[x].assignments[a].content + "</p></div>";
+			for (x = 0; x < classList.courses.length; x += 1) {
+				if (CurrentUser.courses[i] === classList.courses[x].title) {
+					for (a = 0; a < classList.courses[x].assignments.length; a += 1) {
+						assList = "<div id=" + classList.courses[x].assignments[a].title + ">" +
+							"<p id=\"contentClass\">Class: " + classList.courses[x].title + "</p>" +
+							"<p id=\"contentTitle\">Title: " + classList.courses[x].assignments[a].title + "</p>" +
+							"<p id=\"contentDate\">Due On: " + classList.courses[x].assignments[a].due + "	Remaining Time: " + ((today.getTime() - Date.getTime(classList[x].assignments[a].due)) / (24*60*60*1000)).toString() + "</p>" +
+							"<p id=\"contentBody\">" + classList.courses[x].assignments[a].content + "</p></div>";
 					}
 				}
 			}
