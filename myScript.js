@@ -11,7 +11,7 @@ function SetupUserEnv(result) {
 						assList = "<div id=" + classList.courses[x].assignments[a].title + ">" +
 							"<p id=\"contentClass\">Class: " + classList.courses[x].title + "</p>" +
 							"<p id=\"contentTitle\">Title: " + classList.courses[x].assignments[a].title + "</p>" +
-							"<p id=\"contentDate\">Due On: " + classList.courses[x].assignments[a].due + "	Remaining Time: " + ((today.getTime() - Date.getTime(classList.courses[x].assignments[a].due)) / (24*60*60*1000)).toString() + "</p>" +
+							"<p id=\"contentDate\">Due On: " + classList.courses[x].assignments[a].due + /*"	Remaining Time: " + ((today.getTime() - Date.getTime(classList.courses[x].assignments[a].due)) / (24*60*60*1000)).toString() +*/ "</p>" +
 							"<p id=\"contentBody\">" + classList.courses[x].assignments[a].content + "</p></div>";
 					}
 				}
