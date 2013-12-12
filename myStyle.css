@@ -1,5 +1,5 @@
 body {
-	background-color: cornflowerblue;
+	background-color: #0D2E4C;
 }
 .titleblock {
 	border-width: 5px;
@@ -26,6 +26,7 @@ h3 {
 	border-width: 3px;
 	border-style: ridge;
 	border-color: grey;
+	background-color: #0F192A;
 }
 #login {
 	border-width: 1px;
@@ -38,4 +39,7 @@ h3 {
 }
 #loginForm {
 	margin: 2px;
+}
+#wrongLogin {
+	color: red;
 }
