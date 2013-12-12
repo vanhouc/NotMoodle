@@ -4,8 +4,10 @@ body {
 .titleblock {
 	border-width: 5px;
 	border-style: solid;
+	border-bottom-style: none; 
 	border-color: black;
 	margin: auto;
+	background-color: #0769AD;
 }
 h1 {
 	margin: auto;
@@ -24,7 +26,7 @@ h3 {
 	border-style: outset;
 	border-width: 3px;
 	border-radius: 10px; 
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 10px 10px 5px #393B3C;
 }
 .navbar {
 	border-width: 3px;
