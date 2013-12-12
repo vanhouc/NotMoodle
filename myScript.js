@@ -1,28 +1,31 @@
-var currStateManager = new stateManager(), CurrentUser = null;
-function stateManager() {'use strict';}
+var currStateManager = new stateManager(); //CurrentUser = null;
+function stateManager() {
+	'use strict';
+	this.CurrentUser = null;
+}
 // stateManager.prototype.CurrentUser = null;
 stateManager.prototype.checkLogin = function (username, password) {
 	'use strict';
-	if (CurrentUser === null) {
+	if (this.CurrentUser === null) {
 		$.getJSON("Users.js", function(result) {
 			var x;
 			for (x in result) {
 				if (x === username && result[x].password === password && result.hasOwnProperty(x)) {
 					//This function sets the global CurrentUser to the selected person and probably should be its own function
-					CurrentUser = result[x];
+					this.CurrentUser = result[x];
 				}
 			}
 		});
 	}
-		if (CurrentUser.password != null) {
-			console.log("User successfully logged on as " + CurrentUser.fName);
+		if this.CurrentUser !== null) {
+			console.log("User successfully logged on as " + this.CurrentUser.fName);
 			return true;
 		}
 		console.log("User failed to log on");
-		if (CurrentUser !== null) {
-			console.log("DAFUQ?!?!?!");
-			return true;
-		}
+		// if (CurrentUser !== null) {
+		// 	console.log("DAFUQ?!?!?!");
+		// 	return true;
+		// }
 	console.log("This shouldn't be called while there is a CurrentUser");
 	return false;
 };
