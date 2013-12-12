@@ -1,20 +1,20 @@
-var currStateManager;
+var currStateManager, CurrentUser = null;
 function stateManager() {}
-stateManager.prototype.CurrentUser = null;
+// stateManager.prototype.CurrentUser = null;
 stateManager.prototype.checkLogin = function (username, password) {
 	'use strict';
-	if (this.CurrentUser === null) {
+	if (CurrentUser === null) {
 		$.getJSON("Users.js", function(result) {
 			var x;
 			for (x in result) {
 				if (x === username && result[x].password === password && result.hasOwnProperty(x)) {
 					//This function sets the global CurrentUser to the selected person and probably should be its own function
-					this.CurrentUser = result[x];
+					CurrentUser = result[x];
 				}
 			}
 		});
-		if (this.CurrentUser !== null) {
-			console.log("User successfully logged on as " + this.CurrentUser.fName);
+		if (CurrentUser !== null) {
+			console.log("User successfully logged on as " + CurrentUser.fName);
 			return true;
 		}
 		console.log("User failed to log on");
@@ -35,14 +35,14 @@ $(document).ready(function() {
 	});
 	$('#loginForm').hide();
 	$('#login').click(function() {
-		if (currStateManager.CurrentUser === null) {
+		if (CurrentUser === null) {
 			$(this).hide();
 			$('#loginForm').show();
 		}
     else {
       var promptLogOut = confirm("Do you want to Log-Out?");
 			if (promptLogOut) {
-				currStateManager.CurrentUser = 0;
+				CurrentUser = 0;
 				$("#mainSection").slideUp("slow").empty();
 			}
 		}
@@ -52,7 +52,7 @@ $(document).ready(function() {
 			document.getElementById("loginName").value, 
 			document.getElementById("loginPass").value)) {
 			$("#loginForm").slideUp("slow", function() {
-				$("#login").html("Hello " + currStateManager.CurrentUser.fName).fadeIn("slow");
+				$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
 			});
 			$.getJSON("Classes.js", function(results) {
 				var i, x, a, assList, today = new Date(), classList = results;
