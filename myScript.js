@@ -3,7 +3,7 @@ function StateManager() {
 	this.CurrentUser = null;
 	this.checkLogin = function (username, password) {
 	if (this.CurrentUser === null) {
-		var e = this
+		var e = this;
 		$.getJSON("Users.js", function.call(this, result) {
 			var x;
 			for (x in result) {
