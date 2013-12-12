@@ -1,4 +1,4 @@
-var CurrentUser;
+var CurrentUser = null;
 function loginResponse(result) {
 	'use strict';
 	var x, loginName = document.getElementById("loginName").value, passName = document.getElementById("loginPass").value;
