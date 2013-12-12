@@ -2,6 +2,8 @@ var CurrentUser = null;
 function SetupUserEnv(result) {
 	'use strict';
 	var i, x, a, assList = '', today = new Date(), classList = result;
+	//To keep state correct
+	$("#wrongLogin").hide();
 	$("#loginForm").slideUp("slow", function() {
 		$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
 		for (i = 0; i < CurrentUser.courses.length; i += 1) {
@@ -34,11 +36,18 @@ function loginResponse(result) {
 				CurrentUser = result.users[x];
 				console.log(CurrentUser);
 				fetchContent();
+				return true;
 			}
+
+			return false;
 		}
 	}
+function loginFailed() {
+	$("#wrongLogin").slideDown();
+}
 $(document).ready(function() {
 	'use strict';
+	$("#wrongLogin").hide();
 	$('#login').mouseenter(function() {
 		$(this).css('font-weight', 'bold');
 	});
