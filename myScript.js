@@ -12,11 +12,12 @@ stateManager.prototype.checkLogin = function (username, password) {
 					this.CurrentUser = result[x];
 				}
 			}
-			console.log("User not found or incorrect credentials");
 		});
 		if (this.CurrentUser !== null) {
+			console.log("User successfully logged on as " + this.CurrentUser.fName);
 			return true;
 		}
+		console.log("User failed to log on");
 		return false;
 	}
 	console.log("This shouldn't be called while there is a CurrentUser");
