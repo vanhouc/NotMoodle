@@ -1,9 +1,9 @@
 function stateManager() {}
 var currStateManager = new stateManager();
-stateManager.prototype.CurrentUser = null;
+stateManager.prototype.CurrentUser = 0;
 stateManager.prototype.checkLogin = function (username, password) {
 	'use strict';
-	if (CurrentUser === null) {
+	if (CurrentUser === null || CurrentUser === 0) {
 		$.getJSON("Users.js", function(result) {
 			var x;
 			for (x in result) {
