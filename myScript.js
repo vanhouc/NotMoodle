@@ -1,4 +1,3 @@
-var currStateManager = new stateManager(); //CurrentUser = null;
 function stateManager() {
 	'use strict';
 	this.CurrentUser = null;
@@ -57,6 +56,7 @@ function stateManager() {
 
 $(document).ready(function() {
 	'use strict';
+	var currStateManager = new stateManager();
 	$('#login').mouseenter(function() {
 		$(this).css('font-weight', 'bold');
 	});
