@@ -52,7 +52,7 @@ $(document).ready(function() {
 				$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
 			});
 			$.getJSON("Classes.js", function(results) {
-				var i, x, a, assList, today = new Date(), var classList = results;
+				var i, x, a, assList, today = new Date(), classList = results;
 				for (i = 0; i < currStateManager.getClasses().length; i+=1) {
 					for (x = 0; x < classList.length; x+=1) {
 						if (currStateManager.getClasses()[i] === classList[x].title) {
