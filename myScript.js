@@ -3,12 +3,13 @@ function StateManager() {
 	this.CurrentUser = null;
 	this.checkLogin = function (username, password) {
 	if (this.CurrentUser === null) {
-		$.getJSON("Users.js", function(result) {
+		var e = this
+		$.getJSON("Users.js", function.call(this, result) {
 			var x;
 			for (x in result) {
 				if (x === username && result[x].password === password && result.hasOwnProperty(x)) {
 					//This function sets the global CurrentUser to the selected person and probably should be its own function
-					this.CurrentUser = result[x];
+					e = result[x];
 				}
 			}
 		});
