@@ -1,9 +1,8 @@
 var CurrentUser = null;
-function SetupUserEnv() {
+function SetupUserEnv(results) {
 	'use strict';
 	$("#loginForm").slideUp("slow", function() {
 		$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
-		$.getJSON("Classes.js", function(results) {
 		var i, x, a, assList, today = new Date(), classList = results;
 		for (i = 0; i < CurrentUser.courses.length; i += 1) {
 			for (x = 0; x < classList.length; x += 1) {
@@ -19,7 +18,11 @@ function SetupUserEnv() {
 			}
 		}
 		$("#mainSection").html(assList).slideDown("slow");
-		});
+	});
+}
+function fetchContent() {
+	$.getJSON("Classes.js", function(results) {
+		SetupUserEnv(result);
 	});
 }
 function loginResponse(result) {
