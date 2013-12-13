@@ -1,10 +1,10 @@
 var CurrentUser = null;
 function SetupUserEnv(result) {
 	'use strict';
-	var i, x, a, assList = '', today = new Date(), classList = result;
+	var i, x, a, assList = '', /* today = new Date(), */ classList = result;
 	//To keep state correct
 	$("#wrongLogin").hide();
-	$("#loginForm").slideUp("slow", function() {
+	$("#loginForm").slideUp("slow", function () {
 		$("#login").html("Hello " + CurrentUser.fName).fadeIn("slow");
 		for (i = 0; i < CurrentUser.courses.length; i += 1) {
 			for (x = 0; x < classList.courses.length; x += 1) {
@@ -23,50 +23,51 @@ function SetupUserEnv(result) {
 	});
 }
 function fetchContent() {
-	$.getJSON("Classes.js", function(result) {
+	'use strict';
+	$.getJSON("Classes.js", function (result) {
 		SetupUserEnv(result);
 	});
 }
 function loginResponse(result) {
 	'use strict';
 	var x, loginName = document.getElementById("loginName").value, passName = document.getElementById("loginPass").value;
-		for (x = 0; x < result.users.length; x += 1) {
-			if (result.users[x].username === loginName && result.users[x].password === passName) {
-				//This function sets the global CurrentUser to the selected person and probably should be its own function
-				CurrentUser = result.users[x];
-				console.log(CurrentUser);
-				fetchContent();
-			}
+	for (x = 0; x < result.users.length; x += 1) {
+		if (result.users[x].username === loginName && result.users[x].password === passName) {
+			//This function sets the global CurrentUser to the selected person and probably should be its own function
+			CurrentUser = result.users[x];
+			console.log(CurrentUser);
+			fetchContent();
 		}
 	}
+}
 function loginFailed() {
+	'use strict';
 	$("#wrongLogin").slideDown();
 }
-$(document).ready(function() {
+$(document).ready(function () {
 	'use strict';
 	$("#wrongLogin").hide();
-	$('#login').mouseenter(function() {
+	$('#login').mouseenter(function () {
 		$(this).css('font-weight', 'bold');
 	});
-	$('#login').mouseleave(function() {
+	$('#login').mouseleave(function () {
 		$(this).css('font-weight', 'normal');
 	});
 	$('#loginForm').hide();
-	$('#login').click(function() {
+	$('#login').click(function () {
 		if (CurrentUser === null) {
 			$(this).hide();
 			$('#loginForm').show();
-		}
-    else {
-      var promptLogOut = confirm("Do you want to Log-Out?");
+		} else {
+			var promptLogOut = confirm("Do you want to Log-Out?");
 			if (promptLogOut) {
 				CurrentUser = null;
 				$("#mainSection").slideUp("slow").empty();
 			}
 		}
 	});
-	$('#loginSubmit').click(function() {
-		$.getJSON("Users.js", function(result) {
+	$('#loginSubmit').click(function () {
+		$.getJSON("Users.js", function (result) {
 			loginResponse(result);
 		});
 	});
